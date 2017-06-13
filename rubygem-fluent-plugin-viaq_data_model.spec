@@ -2,7 +2,7 @@
 %global gem_name fluent-plugin-viaq_data_model
 
 Name: rubygem-%{gem_name}
-Version: 0.0.3
+Version: 0.0.5
 Release: 1%{?dist}
 Summary: Filter plugin to ensure data is in the ViaQ common data model
 Group: Development/Languages
@@ -76,5 +76,8 @@ cp -a .%{gem_dir}/* \
 %{gem_instdir}/test
 
 %changelog
+* Tue Jun 13 2017 Rich Megginson <rmeggins@redhat.com> - 0.0.5-1
+- Fix bug that caused array values to be dropped
+
 * Wed Feb 15 2017 Rich Megginson <rmeggins@redhat.com> - 0.0.3-1
 - Initial package
