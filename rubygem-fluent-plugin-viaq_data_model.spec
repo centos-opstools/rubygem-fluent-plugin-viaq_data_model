@@ -2,7 +2,7 @@
 %global gem_name fluent-plugin-viaq_data_model
 
 Name: rubygem-%{gem_name}
-Version: 0.0.7
+Version: 0.0.8
 Release: 1%{?dist}
 Summary: Filter plugin to ensure data is in the ViaQ common data model
 Group: Development/Languages
@@ -76,6 +76,9 @@ cp -a .%{gem_dir}/* \
 %{gem_instdir}/test
 
 %changelog
+* Tue Sep  5 2017 Rich Megginson <rmeggins@redhat.com> - 0.0.8-1
+- use test-unit-rr instead of flexmock
+
 * Thu Aug 31 2017 Rich Megginson <rmeggins@redhat.com> - 0.0.7-1
 - allow disabling processing for formatters and index names
 - preserve @timestamp
