@@ -2,7 +2,7 @@
 %global gem_name fluent-plugin-viaq_data_model
 
 Name: rubygem-%{gem_name}
-Version: 0.0.9
+Version: 0.0.11
 Release: 1%{?dist}
 Summary: Filter plugin to ensure data is in the ViaQ common data model
 Group: Development/Languages
@@ -14,13 +14,14 @@ BuildRequires: rubygems-devel
 BuildRequires: ruby >= 2.0.0
 Requires: rubygem(fluentd) >= 0.12.0
 # the following BuildRequires are development dependencies
-# BuildRequires: rubygem(fluentd) >= 0.12.0
-# BuildRequires: rubygem(rr) >= 1.0
-# BuildRequires: rubygem(rr) < 2
-# BuildRequires: rubygem(test-unit) >= 3.2
-# BuildRequires: rubygem(test-unit) < 4
-# BuildRequires: rubygem(test-unit-rr) >= 1.0
-# BuildRequires: rubygem(test-unit-rr) < 2
+BuildRequires: rubygem(rake)
+BuildRequires: rubygem(bundler)
+BuildRequires: rubygem(fluentd) >= 0.12.0
+BuildRequires: rubygem(rr) >= 1.0
+BuildRequires: rubygem(rr) < 2
+BuildRequires: rubygem(test-unit)
+BuildRequires: rubygem(test-unit-rr) >= 1.0
+BuildRequires: rubygem(test-unit-rr) < 2
 BuildArch: noarch
 Provides: rubygem(%{gem_name}) = %{version}
 
@@ -56,6 +57,12 @@ mkdir -p %{buildroot}%{gem_dir}
 cp -a .%{gem_dir}/* \
         %{buildroot}%{gem_dir}/
 
+# Run the test suite
+%check
+pushd .%{gem_instdir}
+rake test
+popd
+
 %files
 %dir %{gem_instdir}
 %exclude %{gem_instdir}/.gitignore
@@ -76,6 +83,12 @@ cp -a .%{gem_dir}/* \
 %{gem_instdir}/test
 
 %changelog
+* Thu Sep 28 2017 Rich Megginson <rmeggins@redhat.com> - 0.0.11-1
+- added a test fix
+
+* Thu Sep 28 2017 Rich Megginson <rmeggins@redhat.com> - 0.0.10-1
+- add support for eventrouter
+
 * Wed Sep 13 2017 Rich Megginson <rmeggins@redhat.com> - 0.0.9-1
 - fix json-file and sys var log record handling
 
