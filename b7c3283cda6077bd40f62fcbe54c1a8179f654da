@@ -1,0 +1,8 @@
+Code-Review+2: Matthias Runge <mrunge@redhat.com>
+Workflow+1: Sandro Bonazzola <sandro.bonazzola@gmail.com>
+Verified+2: Jenkins CI <admin@rpmfactory.beta.rdoproject.org>
+Submitted-by: Jenkins CI <admin@rpmfactory.beta.rdoproject.org>
+Submitted-at: Tue, 24 Oct 2017 10:56:12 +0000
+Reviewed-on: https://review.rdoproject.org/r/10214
+Project: centos-opstools/rubygem-fluent-plugin-viaq_data_model
+Branch: refs/heads/master
