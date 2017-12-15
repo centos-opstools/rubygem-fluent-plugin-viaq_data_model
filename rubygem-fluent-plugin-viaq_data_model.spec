@@ -2,7 +2,7 @@
 %global gem_name fluent-plugin-viaq_data_model
 
 Name: rubygem-%{gem_name}
-Version: 0.0.11
+Version: 0.0.12
 Release: 1%{?dist}
 Summary: Filter plugin to ensure data is in the ViaQ common data model
 Group: Development/Languages
@@ -83,6 +83,11 @@ popd
 %{gem_instdir}/test
 
 %changelog
+* Mon Nov 20 2017 Rich Megginson <rmeggins@redhat.com> - 0.0.12-1
+- Bug 1514110 - Aggregated Logging replacing all log levels with
+-   '3' and '6' after upgrade to 3.5 from 3.4
+-   https://bugzilla.redhat.com/show_bug.cgi?id=1514110
+
 * Thu Sep 28 2017 Rich Megginson <rmeggins@redhat.com> - 0.0.11-1
 - added a test fix
 
